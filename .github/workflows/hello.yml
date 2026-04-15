@@ -13,3 +13,10 @@ jobs:
 
       - name: print Names
         run: echo "Hello,Sahil here!"
+
+  say-bye:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: print message
+        run: echo "Goodbye from second job"
