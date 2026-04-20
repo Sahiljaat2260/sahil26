@@ -1,22 +1,39 @@
-name : My First Workflow
+# name : My First Workflow
 
-on: [push, pull_request]
+# on: [push, pull_request]
+
+# jobs:
+  
+#   say-hello:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - name: print message
+#         run: echo "Hello, GitHub Action!"
+
+#       - name: print Names
+#         run: echo "Hello,Sahil this side!"
+
+#   say-bye:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - name: print message
+#         run: echo "Goodbye from second job Sir"-
 
 jobs:
-  
-  say-hello:
+  run-test:
     runs-on: ubuntu-latest
-
     steps:
-      - name: print message
-        run: echo "Hello, GitHub Action!"
+      - name: Run test step 1
+        run: echo "Test is running"
 
-      - name: print Names
-        run: echo "Hello,Sahil this side!"
+      - name: Run test step 2
+        run: echo "Test Successful"
 
-  say-bye:
+  deploy-app:
+    needs: run-test
     runs-on: ubuntu-latest
-
     steps:
-      - name: print message
-        run: echo "Goodbye from second job Sir"
+      - name: Deploy step
+        run: echo "Deploying application..."
